@@ -38,7 +38,7 @@ public class Lessee extends Person implements Serializable{
 	private Calendar startFrom;
 	//mappedby nombre de la otra clase que represente la ifnromacion
 	@OneToMany(mappedBy="lessee", fetch=FetchType.LAZY)
-	private List<Subscription> subscriptions;
+	private List<Rent> subscriptions;
 	public Lessee() {
 		super();
 			
@@ -74,11 +74,11 @@ public class Lessee extends Person implements Serializable{
 		this.startFrom = startFrom;
 	}
 
-	public List<Subscription> getSubscriptions() {
+	public List<Rent> getSubscriptions() {
 		return subscriptions;
 	}
 
-	public void setSubscriptions(List<Subscription> subscriptions) {
+	public void setSubscriptions(List<Rent> subscriptions) {
 		this.subscriptions = subscriptions;
 	}
 	

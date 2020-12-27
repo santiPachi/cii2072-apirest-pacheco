@@ -21,20 +21,18 @@ public class Property implements Serializable{
 	@Column(name="id_property")
 	@Basic(optional=false)
 	private Long idProperty;
-	@Column(name="name")
-	private String name;
 	@Column(name="main_street")
 	private String mainStreet;
 	@Column(name="secundary_street")
 	private String secundaryStreet;
-	@Column(name="price")
-	private float price;
+	@Column(name="pricePerDay")
+	private float pricePerDay;
 	@Column(name="num_rooms")
-	private float numRomms;
+	private int numRomms;
 	@Column(name="num_bethrooms")
-	private float numBethrooms;
+	private int numBethrooms;
 	@Column(name="num_garages")
-	private float numGarages;
+	private int numGarages;
 	@Column(name="description")
 	private String description;
 
@@ -83,13 +81,30 @@ public class Property implements Serializable{
 	}
 
 
-	public float getPrice() {
-		return price;
+	
+
+	public float getPricePerDay() {
+		return pricePerDay;
 	}
 
 
-	public void setPrice(float price) {
-		this.price = price;
+	public void setPricePerDay(float pricePerDay) {
+		this.pricePerDay = pricePerDay;
+	}
+
+
+	public void setNumRomms(int numRomms) {
+		this.numRomms = numRomms;
+	}
+
+
+	public void setNumBethrooms(int numBethrooms) {
+		this.numBethrooms = numBethrooms;
+	}
+
+
+	public void setNumGarages(int numGarages) {
+		this.numGarages = numGarages;
 	}
 
 
@@ -98,37 +113,22 @@ public class Property implements Serializable{
 	}
 
 
-	public void setNumRomms(float numRomms) {
-		this.numRomms = numRomms;
-	}
-
+	
 
 	public float getNumBethrooms() {
 		return numBethrooms;
 	}
 
 
-	public void setNumBethrooms(float numBethrooms) {
-		this.numBethrooms = numBethrooms;
-	}
-
-
+	
 	public float getNumGarages() {
 		return numGarages;
 	}
 
 
-	public void setNumGarages(float numGarages) {
-		this.numGarages = numGarages;
-	}
+	
 
 
-	public String getName() {
-		return name;
-	}
-	public void setName(String name) {
-		this.name = name;
-	}
 	public String getDescription() {
 		return description;
 	}

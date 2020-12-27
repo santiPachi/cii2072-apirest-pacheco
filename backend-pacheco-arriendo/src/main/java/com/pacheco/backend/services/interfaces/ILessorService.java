@@ -9,5 +9,7 @@ public interface ILessorService {
 	public Lessor findById(Long id);
 	public void delete(Long id);
 	public List<Lessor> findAll();
+	public Lessor findByLastName(String criteria); //Find By Attribute Last Name
+
 
 }

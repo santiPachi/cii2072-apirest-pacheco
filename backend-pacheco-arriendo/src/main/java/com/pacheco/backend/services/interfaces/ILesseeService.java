@@ -9,5 +9,7 @@ public interface ILesseeService {
 	public Lessee findById(Long id);
 	public void delete(Long id);
 	public List<Lessee> findAll();
+	public Lessee findByLastName(String criteria); //Find By Attribute Last Name
+
 
 }

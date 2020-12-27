@@ -4,6 +4,7 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import com.pacheco.backend.models.dao.ILessee;
 import com.pacheco.backend.models.entities.Lessee;
@@ -36,6 +37,10 @@ public class LesseeService implements ILesseeService{
 	}
 	
 	
-
+	@Override
+	@Transactional(readOnly=true)
+	public Lessee findByLastName(String criteria) {		
+		return dao.buscarPorApellido(criteria);
+	}
 
 }

@@ -4,6 +4,7 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import com.pacheco.backend.models.dao.ILessor;
 
@@ -35,6 +36,12 @@ public class LessorService implements ILessorService{
 	@Override
 	public List<Lessor> findAll() {
 		return (List<Lessor>) dao.findAll();
+	}
+
+	@Override
+	@Transactional(readOnly=true)
+	public Lessor findByLastName(String criteria) {		
+		return dao.buscarPorApellido(criteria);
 	}
 	
 }
